@@ -21,7 +21,6 @@ async function main() {
 
     console.log(`[Varnish] Action: ${cfg.action}`);
     console.log(`[Varnish] Server ID: ${cfg.serverId}`);
-    console.log(`[Varnish] Wait for completion: ${cfg.waitForCompletion}`);
 
     // obtain access token
     const token = await getAccessToken(cfg.email, cfg.apiKey);

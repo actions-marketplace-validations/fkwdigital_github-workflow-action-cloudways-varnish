@@ -7,8 +7,6 @@ A GitHub Action to manage Varnish cache service on Cloudways servers - enable, d
 - **Enable Varnish**: Start the Varnish service on your server
 - **Disable Varnish**: Stop the Varnish service on your server
 - **Purge Cache**: Clear the Varnish cache without restarting the service
-- **Async Operation Tracking**: Optionally wait for operations to complete
-- **Clean Architecture**: Separated concerns with dedicated modules
 
 ## Usage
 
@@ -34,7 +32,6 @@ A GitHub Action to manage Varnish cache service on Cloudways servers - enable, d
     CLOUDWAYS_API_KEY: ${{ secrets.CLOUDWAYS_API_KEY }}
     CLOUDWAYS_SERVER_ID: '12345'
     ACTION: 'enable'
-    WAIT_FOR_COMPLETION: 'true'
 ```
 
 ### Disable Varnish
@@ -55,9 +52,8 @@ A GitHub Action to manage Varnish cache service on Cloudways servers - enable, d
 | --------------------- | -------------------------------------------------- | -------- | ------- |
 | `CLOUDWAYS_EMAIL`     | Your Cloudways account email                       | Yes      | -       |
 | `CLOUDWAYS_API_KEY`   | Your Cloudways API key                             | Yes      | -       |
-| `SERVER_ID`           | The Cloudways server ID                            | Yes      | -       |
+| `CLOUDWAYS_SERVER_ID` | The Cloudways server ID                            | Yes      | -       |
 | `ACTION`              | Action to perform: `enable`, `disable`, or `purge` | Yes      | `purge` |
-| `WAIT_FOR_COMPLETION` | Wait for the operation to complete                 | No       | `true`  |
 
 ## Getting Your Credentials
 

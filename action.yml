@@ -23,7 +23,3 @@ inputs:
     description: "Action to perform: enable, disable, or purge"
     required: true
     default: "purge"
-  WAIT_FOR_COMPLETION:
-    description: "Wait for the operation to complete"
-    required: false
-    default: "true"

@@ -30,8 +30,7 @@ function getInputs() {
     email: fromEnv('CLOUDWAYS_EMAIL'),
     apiKey: fromEnv('CLOUDWAYS_API_KEY'),
     serverId: fromEnv('CLOUDWAYS_SERVER_ID'),
-    action: fromEnv('ACTION', 'enable').toLowerCase(),
-    waitForCompletion: fromEnv('WAIT_FOR_COMPLETION', 'true') === 'true'
+    action: fromEnv('ACTION', 'enable').toLowerCase()
   };
 }
 
