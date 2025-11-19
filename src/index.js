@@ -1,5 +1,5 @@
 const { getInputs, assertRequired } = require('./inputs');
-const { getAccessToken, executeVarnishAction, waitForCompletion } = require('./api');
+const { getAccessToken, executeVarnishAction } = require('./api');
 
 /**
  * Main entry point for the GitHub Actions workflow.
@@ -29,12 +29,8 @@ async function main() {
     const operation = await executeVarnishAction(token, cfg.serverId, cfg.action);
 
     // optional, wait for service action process to complete instead of async
-    if (cfg.waitForCompletion) {
-      await waitForCompletion(token, operation.id);
+    if (operation.completed) {
       console.log('✅ [Varnish] Operation completed successfully');
-    } else {
-      console.log(`✅ [Varnish] Operation initiated (ID: ${operation.id})`);
-      console.log('   Use the operation ID to check status later');
     }
 
     process.exit(0);
